@@ -27,7 +27,6 @@ public class Cliente {
     @Column(name = "nome")
     private String nome;
 
-    @Nullable
     @Column(name = "dt_nascimento")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dt_nascimento;
@@ -36,15 +35,12 @@ public class Cliente {
     @Column(name = "cpf")
     private String cpf;
 
-    @Nullable
     @Column(name = "email")
     private String email;
 
-    @Nullable
     @Column(name = "endereco")
     private String endereco;
 
-    @Nullable
     @Column(name = "telefone")
     private String telefone;
 }

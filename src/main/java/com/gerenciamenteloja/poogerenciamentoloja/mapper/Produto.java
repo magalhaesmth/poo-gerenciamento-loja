@@ -6,8 +6,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity(name = "produto")
 @Data
@@ -30,14 +33,17 @@ public class Produto {
     private Double preco;
 
     @NotNull
-    @Column(name = "quantidade")
+    @Column(name = "quantidade_venda")
     private Integer quantidade;
 
     @NotNull
     @Column(name = "sku")
     private String sku;
 
-    @Nullable
     @Column(name = "descricao")
     private String descricao;
+
+    @Column(name = "dt_venda")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime dt_venda;
 }
